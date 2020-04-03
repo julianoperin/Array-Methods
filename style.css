@@ -1,0 +1,14 @@
+body {
+  background: pink;
+}
+h1 {
+  text-align: center;
+  font-family: monospace;
+}
+
+.box {
+  height: 400px;
+  width: 650px;
+  border: solid black 1px;
+  margin: auto;
+}

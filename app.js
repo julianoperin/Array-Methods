@@ -48,6 +48,15 @@ function showMillionares() {
   updateDOM();
 }
 
+// Entire Wealth
+function entireWealth() {
+  const total = data.reduce((acc, num) => acc + num.money, 0);
+  const totalWealth = document.createElement("span");
+  totalWealth.classList.add("total-class");
+  totalWealth.innerHTML = `<strong>Total:</strong> ${formatMoney(total)}`;
+  main.appendChild(totalWealth);
+}
+
 // Add new obj to data array
 function addData(obj) {
   data.push(obj);
@@ -83,3 +92,5 @@ doubleBtn.addEventListener("click", doubleMoney);
 sortBtn.addEventListener("click", sortByRichest);
 //  show only millionare
 showMillionairesBtn.addEventListener("click", showMillionares);
+// Entire wealth
+calculateWealthBtn.addEventListener("click", entireWealth);

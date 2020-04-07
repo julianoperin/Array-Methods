@@ -4,7 +4,7 @@
 
 body {
   background: pink;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "Gotu", monospace, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,18 +65,17 @@ h2 {
   margin: 0 0 20px;
 }
 
-h3 {
-  background-color: white;
-  border-bottom: 1px solid black;
-  display: flex;
-  justify-content: space-between;
-  font-weight: 300;
-  margin: 20px 0 0;
-}
-
 .person {
   display: flex;
   justify-content: space-between;
   font-size: 20px;
   margin-bottom: 10px;
+}
+
+.total-class {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: white;
 }

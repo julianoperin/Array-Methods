@@ -2,7 +2,7 @@ const main = document.getElementById("main");
 const addUserBtn = document.getElementById("add-user");
 const doubleBtn = document.getElementById("double");
 const showMillionairesBtn = document.getElementById("show-millionaires");
-const SortBtn = document.getElementById("sort");
+const sortBtn = document.getElementById("sort");
 const calculateWealthBtn = document.getElementById("calculate-wealth");
 
 let data = [];
@@ -24,6 +24,28 @@ async function getRandomUser() {
   };
 
   addData(newUser);
+}
+function doubleMoney() {
+  data = data.map(user => {
+    return { ...user, money: user.money * 2 };
+  });
+
+  updateDOM();
+}
+
+// Sort users by richest
+function sortByRichest() {
+  data.sort((a, b) => b.money - a.money);
+
+  updateDOM();
+}
+
+//  Filter by showMillionare
+
+function showMillionares() {
+  data = data.filter(user => user.money >= 1000000);
+
+  updateDOM();
 }
 
 // Add new obj to data array
@@ -52,11 +74,12 @@ function formatMoney(number) {
   return "$" + number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
 }
 
+// Event Listeners
 // Add another USER
 addUserBtn.addEventListener("click", getRandomUser);
-
-const doub = data.map(item => {
-  return item * 2;
-});
-
-console.log(doub);
+// Double money
+doubleBtn.addEventListener("click", doubleMoney);
+// Sort
+sortBtn.addEventListener("click", sortByRichest);
+//  show only millionare
+showMillionairesBtn.addEventListener("click", showMillionares);
